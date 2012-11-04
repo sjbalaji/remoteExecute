@@ -31,7 +31,7 @@ int main (int argc, char * argv[]) {
   int i;
   if(argc == 1)
     {
-      printf("Usage is remote -u username -p password -c commandFile -h hostFiles");
+      printf("Usage is remoteExecute -u username -p password -c commandFile -h hostFiles");
     }
   else
     {
@@ -102,7 +102,9 @@ int main (int argc, char * argv[]) {
 	printf("IP read is -->%s ",ip);
 	#endif
 	sprintf(completecommand," sshpass -p '%s' ssh %s@%s %s &",password,username,ip,command);
+	#ifdef DEBUG_ON
 	printf("%s\n",completecommand);
+	#endif
 	system(completecommand);	
     }
 

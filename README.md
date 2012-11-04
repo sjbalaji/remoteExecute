@@ -24,19 +24,28 @@ The set of instructions that are to be executed are kept this file with each com
 eq: 
 
  :) (goofy:balaji)-(0)-(~/remoteCommand)
+
 cat command.txt 
+
 date
+
 date
+
  :) (goofy:balaji)-(0)-(~/remoteCommand)
 
 ii. hostFile
 This file contains the ip addresses / hostnames of all the machines where the command is to be executed.
 eq:
  :) (goofy:balaji)-(0)-(~/remoteCommand)
+
 cat host.txt 
+
 10.6.9.44
+
 10.6.9.201
+
  :) (goofy:balaji)-(0)-(~/remoteCommand)
+
 
 Sample command execution
 ------------------------

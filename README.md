@@ -5,11 +5,14 @@ Execute a set of commands in a cluster of machines.
 
 Dependencies 
 ------------
-i.  Package dependencies
+i.  Package dependencies -
+
 1. sshpass for non interactive ssh based remote command execution.
 
-ii. Logical dependencies
+ii. Logical dependencies -
+
 1. All the machines have a same login credentials.
+
 2. Remote ssh is enabled in all the machines. 
 
  

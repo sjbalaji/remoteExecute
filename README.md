@@ -28,7 +28,6 @@ eq:
 cat command.txt 
 
 date
-
 date
 
  :) (goofy:balaji)-(0)-(~/remoteCommand)
@@ -41,7 +40,6 @@ eq:
 cat host.txt 
 
 10.6.9.44
-
 10.6.9.201
 
  :) (goofy:balaji)-(0)-(~/remoteCommand)

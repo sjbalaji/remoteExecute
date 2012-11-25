@@ -5,9 +5,9 @@
  * Email:  sjbalajimdu@gmail.com
  * Organization:  IIT Madras
  * Created: Sat Nov  3 22:34:41 2012 (+0530)
- * Last-Updated: Sun Nov 25 22:39:59 2012 (+0530)
+ * Last-Updated: Sun Nov 25 22:53:35 2012 (+0530)
  *           By: balaji
- *     Update #: 48
+ *     Update #: 49
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,7 +38,7 @@ int main (int argc, char * argv[]) {
     {
       for (i=2;i<=argc;i=i+2)
 	{ 
-	  if(strcmp("-h",argv[i-1])==0) 
+	  if(strcmp("-H",argv[i-1])==0) 
 	    {
 	      printf("Usage is remoteExecute -u username -p password -c commandFile -h hostFiles\n");
 	      return 0; 
@@ -77,9 +77,7 @@ int main (int argc, char * argv[]) {
 	      printf("hostFile is %s\n",hostFile);
 #endif
 	    }
-
 	}
-
     }
 
   if(commandfile==NULL) {
@@ -113,7 +111,6 @@ int main (int argc, char * argv[]) {
 #endif
       system(completecommand);	
     }
-
   }
 
   return 0;

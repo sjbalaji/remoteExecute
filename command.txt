@@ -1,2 +1,4 @@
 date
+jps
 date
+ip addr

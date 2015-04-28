@@ -26,12 +26,14 @@ int main (int argc, char * argv[]) {
   char ip[SLEN];
   char temp[LEN];
   char completecommand[LEN];
+  char sshkey[LEN];
   FILE *hostfile= NULL, *commandfile=NULL;
 
   int i;
   if(argc == 1)
     {
       printf("Usage is remoteExecute -u username -p password -c commandFile -h hostFiles\n");
+      printf("Usage is remoteExecute -u username -i sshkey -c commandFile -h hostFiles\n");
       return 0;
     }
   else
@@ -43,6 +45,15 @@ int main (int argc, char * argv[]) {
 	      printf("Usage is remoteExecute -u username -p password -c commandFile -h hostFiles\n");
 	      return 0; 
 	    }	
+	  if(strcmp("-i",argv[i-1])==0)
+	    {
+	      strcpy(sshkey,argv[i]);
+#ifdef DEBUG_ON
+	      printf("ssh key path parsed \n");
+	      printf("ssh key path is %s\n",username);
+#endif
+	    }
+
 	  if(strcmp("-u",argv[i-1])==0)
 	    {
 	      strcpy(username,argv[i]);
@@ -51,6 +62,7 @@ int main (int argc, char * argv[]) {
 	      printf("Usename is %s\n",username);
 #endif
 	    }
+	  
 	  if(strcmp("-p",argv[i-1])==0)
 	    {
 	      strcpy(password,argv[i]);
@@ -105,7 +117,12 @@ int main (int argc, char * argv[]) {
 #ifdef DEBUG_ON
       printf("IP read is -->%s ",ip);
 #endif
-      sprintf(completecommand," sshpass -p '%s' ssh %s@%s %s &",password,username,ip,command);
+	  if(strlen(sshkey)>0) {
+	      sprintf(completecommand,"ssh -i %s %s@%s %s &",sshkey,username,ip,command);	  
+	  } else {
+		  sprintf(completecommand," sshkey -p '%s' ssh %s@%s %s &",password,username,ip,command);		  
+	  }
+	  
 #ifdef DEBUG_ON
       printf("%s\n",completecommand);
 #endif
